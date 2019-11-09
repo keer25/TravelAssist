@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -25,8 +26,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.travelassist.R;
+import com.example.travelassist.ui.MainActivity;
 import com.example.travelassist.ui.login.LoginViewModel;
 import com.example.travelassist.ui.login.LoginViewModelFactory;
+import com.example.travelassist.ui.register.RegisterActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -134,16 +137,18 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            updateUiWithUser(new LoggedInUserView(currentUser.getDisplayName()));
-        }
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        if (currentUser != null) {
+//            updateUiWithUser(new LoggedInUserView(currentUser.getDisplayName()));
+//        }
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
         // TODO : initiate successful logged in experience
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+        startActivity(intent);
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {
@@ -173,7 +178,9 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUiWithUser(new LoggedInUserView(user.getDisplayName()));
+                            //updateUiWithUser(new LoggedInUserView(user.getDisplayName()));
+                            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                            startActivity(intent);
                         } else {
                             Toast.makeText(LoginActivity.this, "Signup Failed. Try Again",
                                     Toast.LENGTH_SHORT).show();
