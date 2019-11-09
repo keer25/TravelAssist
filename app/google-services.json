@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "656437584047",
+    "firebase_url": "https://travelassist-4cef5.firebaseio.com",
+    "project_id": "travelassist-4cef5",
+    "storage_bucket": "travelassist-4cef5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656437584047:android:ca9f4edd99a1498888745a",
+        "android_client_info": {
+          "package_name": "com.example.travelassist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "656437584047-msujlt6kfhfqvc7f0o9gt1hbtr9ajamu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgI4T2SjVQRIwythuDAJVwXKMoy0JVz5Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "656437584047-msujlt6kfhfqvc7f0o9gt1hbtr9ajamu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
